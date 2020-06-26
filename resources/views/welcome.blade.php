@@ -94,7 +94,14 @@
                     <a href="https://vapor.laravel.com">Vapor</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
+
+
             </div>
         </div>
+        <div id="app">
+
+        </div>
+
+        <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>
