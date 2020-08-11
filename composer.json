@@ -14,7 +14,8 @@
         "laravel/framework": "^6.2",
         "laravel/passport": "^9.3",
         "laravel/tinker": "^2.0",
-        "mtownsend/response-xml": "^1.2"
+        "mtownsend/response-xml": "^1.2",
+        "vinkla/hashids": "7.0"
     },
     "require-dev": {
         "facade/ignition": "^1.4",

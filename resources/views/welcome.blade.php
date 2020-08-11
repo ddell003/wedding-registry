@@ -107,50 +107,16 @@
     </body>
 </html>
  //template from https://colorlib.com/preview/theme/hookup/
+ php artisan user:create --first_name=Parker --last_name=Dell --email=parkerdell94@gmail.com --password=testtest --admin=1
+ php artisan user:get --id=2
+
  */ ?>
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Katie & Parker</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Libre+Caslon+Text:400,400i,700&display=swap" rel="stylesheet">
-
-    <link href="{{ asset('css/template/open-iconic-bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/template/animate.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/template/owl.carousel.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/template/owl.theme.default.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/template/magnific-popup.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/template/aos.css') }}" rel="stylesheet">
-    <?php /*<link href="{{ asset('css/template/ionicons.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/template/flaticon.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/template/icomoon.css') }}" rel="stylesheet">*/ ?>
-    <link href="{{ asset('css/template/style.css') }}" rel="stylesheet">
-</head>
+@include('layouts.partials.headers')
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target" id="ftco-navbar">
-    <div class="container">
-        <a class="navbar-brand" href="index.html">Katie & Parker</a>
-        <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="oi oi-menu"></span> Menu
-        </button>
-        <div class="collapse navbar-collapse" id="ftco-nav">
-            <ul class="navbar-nav nav ml-auto">
-                <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-                <li class="nav-item"><a href="#groom-bride-section" class="nav-link"><span>Groom &amp; Bride</span></a></li>
-                <?php //<li class="nav-item"><a href="#lovestory-section" class="nav-link"><span>Love Story</span></a></li> ?>
-                <li class="nav-item"><a href="#greeting-section" class="nav-link"><span>Greetings</span></a></li>
-                <li class="nav-item"><a href="#people-section" class="nav-link"><span>People</span></a></li>
-                <li class="nav-item"><a href="#when-where-section" class="nav-link"><span>When &amp; Where</span></a></li>
-                <li class="nav-item"><a href="#rsvp-section" class="nav-link"><span>RSVP</span></a></li>
-                <li class="nav-item"><a href="#gallery-section" class="nav-link"><span>Gallery</span></a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+@include('layouts.partials.navagation')
 <section id="home" class="video-hero js-fullheight" style="height: 700px; background-image: url(img/beach2.jpg?h=700); background-size:cover; background-position: top center;" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <!--<a class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=Mjjw19B7rMk',containment:'#home', showControls:false, autoPlay:true, loop:true, mute:true, startAt:0, opacity:1, quality:'default',optimizeDisplay:true}"></a>-->
@@ -352,96 +318,17 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="carousel-friends owl-carousel ftco-owl ftco-animate">
-                    <div class="item">
-                        <div class="people text-center">
-                            <div class="img" style="background-image: url(img/jon.jpg);"></div>
-                            <div class="text">
-                                <h3>Jon Gee</h3>
-                                <span>Best man</span>
+                    @foreach($weddingParty as $party)
+                        <div class="item">
+                            <div class="people text-center">
+                                <div class="img" style="background-image: url({{$party['url']}});"></div>
+                                <div class="text">
+                                    <h3>{{$party['name']}}</h3>
+                                    <span>{{$party['title']}}</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="item">
-                        <div class="people text-center">
-                            <div class="img" style="background-image: url(img/noah.jpg);"></div>
-                            <div class="text">
-                                <h3>Noah Dell</h3>
-                                <span>Groomsmen</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="people text-center">
-                            <div class="img" style="background-image: url(images/groom-men-3.jpg);"></div>
-                            <div class="text">
-                                <h3>Jacob Dell</h3>
-                                <span>Groomsmen</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="people text-center">
-                            <div class="img" style="background-image: url(images/groom-men-4.jpg);"></div>
-                            <div class="text">
-                                <h3>Bobby Beal</h3>
-                                <span>Groomsmen</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="people text-center">
-                            <div class="img" style="background-image: url(images/groom-men-4.jpg);"></div>
-                            <div class="text">
-                                <h3>Michael Keifer</h3>
-                                <span>Groomsmen</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="people text-center">
-                            <div class="img" style="background-image: url(images/bridesmaid-1.jpg);"></div>
-                            <div class="text">
-                                <h3>Rose Jones</h3>
-                                <span>Bridesmaid</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="people text-center">
-                            <div class="img" style="background-image: url(images/bridesmaid-2.jpg);"></div>
-                            <div class="text">
-                                <h3>Mary Dell</h3>
-                                <span>Bridesmaid</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="people text-center">
-                            <div class="img" style="background-image: url(images/bridesmaid-3.jpg);"></div>
-                            <div class="text">
-                                <h3>Alicia Brean</h3>
-                                <span>Bridesmaid</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="people text-center">
-                            <div class="img" style="background-image: url(images/bridesmaid-4.jpg);"></div>
-                            <div class="text">
-                                <h3>Angel Worth</h3>
-                                <span>Bridesmaid</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="people text-center">
-                            <div class="img" style="background-image: url(images/bridesmaid-4.jpg);"></div>
-                            <div class="text">
-                                <h3>Angel Worth</h3>
-                                <span>Bridesmaid</span>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -507,46 +394,13 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-3 ftco-animate">
-                <a href="images/gallery-1.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/gallery-1.jpg);">
-                    <div class="icon d-flex align-items-center justify-content-center"><span class="ion-ios-image"></span></div>
-                </a>
-            </div>
-            <div class="col-md-3 ftco-animate">
-                <a href="images/gallery-2.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/gallery-2.jpg);">
-                    <div class="icon d-flex align-items-center justify-content-center"><span class="ion-ios-image"></span></div>
-                </a>
-            </div>
-            <div class="col-md-3 ftco-animate">
-                <a href="images/gallery-3.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/gallery-3.jpg);">
-                    <div class="icon d-flex align-items-center justify-content-center"><span class="ion-ios-image"></span></div>
-                </a>
-            </div>
-            <div class="col-md-3 ftco-animate">
-                <a href="images/gallery-4.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/gallery-4.jpg);">
-                    <div class="icon d-flex align-items-center justify-content-center"><span class="ion-ios-image"></span></div>
-                </a>
-            </div>
-            <div class="col-md-3 ftco-animate">
-                <a href="images/gallery-5.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/gallery-5.jpg);">
-                    <div class="icon d-flex align-items-center justify-content-center"><span class="ion-ios-image"></span></div>
-                </a>
-            </div>
-            <div class="col-md-3 ftco-animate">
-                <a href="images/gallery-6.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/gallery-6.jpg);">
-                    <div class="icon d-flex align-items-center justify-content-center"><span class="ion-ios-image"></span></div>
-                </a>
-            </div>
-            <div class="col-md-3 ftco-animate">
-                <a href="images/gallery-7.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/gallery-7.jpg);">
-                    <div class="icon d-flex align-items-center justify-content-center"><span class="ion-ios-image"></span></div>
-                </a>
-            </div>
-            <div class="col-md-3 ftco-animate">
-                <a href="images/gallery-8.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/gallery-8.jpg);">
-                    <div class="icon d-flex align-items-center justify-content-center"><span class="ion-ios-image"></span></div>
-                </a>
-            </div>
+            @foreach($gallery as $photo)
+               <div class="col-md-3 ftco-animate">
+                   <a href="{{$photo['url']}}" title="{{$photo['title']}}" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url({{$photo['url']}});">
+                       <div class="icon d-flex align-items-center justify-content-center"><span class="ion-ios-image"></span></div>
+                   </a>
+               </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -554,23 +408,6 @@
 
 <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
 
-<script src="{{ asset('js/template/jquery.min.js') }}"></script>
-<script src="{{ asset('js/template/jquery-migrate-3.0.1.min.js') }}"></script>
-<script src="{{ asset('js/template/popper.min.js') }}"></script>
-<script src="{{ asset('js/template/jquery.easing.1.3.js') }}"></script>
-<script src="{{ asset('js/template/jquery.waypoints.min.js') }}"></script>
-<script src="{{ asset('js/template/jquery.stellar.min.js') }}"></script>
-<script src="{{ asset('js/template/owl.carousel.min.js') }}"></script>
-<script src="{{ asset('js/template/jquery.magnific-popup.min.js') }}"></script>
-<script src="{{ asset('js/template/aos.js') }}"></script>
-<script src="{{ asset('js/template/jquery.animateNumber.min.js') }}"></script>
-<script src="{{ asset('js/template/jquery.mb.YTPlayer.min.js') }}"></script>
-<script src="{{ asset('js/template/scrollax.min.js') }}"></script>
-
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false" type="449c6e4c80def2ffd8bbd963-text/javascript"></script>
-<script src="{{ asset('js/template/google-map.js') }}"></script>
-<script src="{{ asset('js/template/main.js') }}"></script>
-
-<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="449c6e4c80def2ffd8bbd963-|49" defer=""></script></body>
+@include('layouts.partials.templateScripts')
+</body>
 </html>

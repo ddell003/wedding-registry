@@ -11,12 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', 'HomeController@welcome')->name('welcome');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/rsvp', 'RsvpController@index')->name('rsvp');
+Route::get('/registry', 'RegistryController@index')->name('registry');
 Route::get('/admin/parties', 'HomeController@index')->name('admin.parties');
 //Route::resource('users', '\\' . UserController::class);
