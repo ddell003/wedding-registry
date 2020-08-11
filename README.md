@@ -1,4 +1,7 @@
-## my bookstore
+## Wedding Registry
+This is a laravel project. 
+### Getting Started
+1. ```~composer install```
 
 ## Deployments
 Install the Heroku CLI
