@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Api\MealController;
+use App\Http\Api\PartyController;
+use App\Http\Api\RegistryItemController;
 use Illuminate\Http\Request;
 
 /*
@@ -16,3 +19,13 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::group(['middleware' => ['throttle:20,1', 'auth:api']], function () {
+
+    Route::resource('/party', '\\' . PartyController::class);
+    Route::resource('/meal', '\\' . MealController::class);
+    Route::resource('/registry_items', '\\' . RegistryItemController::class);
+
+});
+
+//Route::resource('users', '\\' . UserController::class);

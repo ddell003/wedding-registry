@@ -14,28 +14,35 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('roles', function (Blueprint $table) {
+        Schema::create('party', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->string('slug');
+            $table->string('email')->nullable();
+            $table->string('street')->nullable();
+            $table->string('street2')->nullable();
+            $table->string('city')->nullable();
+            $table->string('state')->nullable();
+            $table->string('zip')->nullable();
+            $table->string('country')->default('USA');
+            $table->boolean('rehearsal')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
 
-        $roles = [
-            'Web Admin',
-            'Admin',
-            'Member',
-            'Unapproved',
-            'Other'
-        ];
+        Schema::create('rsvps', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->integer('party_id');
+            $table->integer('count');
+            $table->boolean('attending')->nullable();
+            $table->boolean('rehearsal')->nullable();
+            $table->boolean('ceremony')->nullable();
+            $table->boolean('reception')->nullable();
+            $table->boolean('response_may_change')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
+        });
 
-        foreach ($roles as $role){
-            DB::table('roles')->insert([
-                'name'=>$role,
-                'slug'=>strtolower(str_replace(' ', '_', $role)),
-            ]);
-        }
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
@@ -43,10 +50,66 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('api_token', 80);
+            $table->string('allergies')->nullable();
+            $table->integer('party_id')->nullable();
+            $table->boolean('party_lead')->default(1);
+            $table->boolean('admin')->default(0);
+            $table->integer('meal_id')->nullable();
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();
         });
+
+        Schema::create('meals', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->text('description')->nullable();
+            $table->boolean('gluten_free')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
+        });
+
+        Schema::create('user_meal_preferences', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->integer('user_id');
+            $table->integer('meal_id');
+            $table->boolean('gluten_free')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
+        });
+
+        $meals = [
+            ['name'=>'Chicken', 'gluten_free'=>0],
+            ['name'=>'Beef', 'gluten_free'=>0],
+            ['name'=>'Vegies', 'gluten_free'=>0],
+        ];
+
+        foreach ($meals as $meal){
+            DB::table('meals')->insert($meal);
+        }
+
+        Schema::create('registry_items', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->text('description')->nullable();
+            $table->string('photo_src')->nullable();
+            $table->integer('party_id')->nullable();
+            $table->dateTime('claimed_at')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
+        });
+
+        Schema::create('registry_items_urls', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->text('description')->nullable();
+            $table->integer('registry_item_id');
+            $table->string('url')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
+        });
+
+
     }
 
     /**
@@ -57,5 +120,12 @@ class CreateUsersTable extends Migration
     public function down()
     {
         Schema::dropIfExists('users');
+        Schema::dropIfExists('roles');
+        Schema::dropIfExists('party');
+        Schema::dropIfExists('rsvps');
+        Schema::dropIfExists('meals');
+        Schema::dropIfExists('user_meal_preferences');
+        Schema::dropIfExists('registry_items');
+        Schema::dropIfExists('registry_items_urls');
     }
 }
