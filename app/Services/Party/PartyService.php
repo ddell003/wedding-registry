@@ -4,6 +4,7 @@
 namespace App\Services\Party;
 
 
+use App\Obfuscator;
 use App\Services\Party\Repositories\PartyRepository;
 use App\Services\Party\Repositories\RsvpRepository;
 use App\Services\User\Repositories\UserRepository;
@@ -86,17 +87,21 @@ class PartyService
 
                     //primary user gets email associated to party
                     $primary = (Arr::get($user, 'party_lead', 0) || count($users) == 1);
-                    $email = ($primary) ? $partyData['email'] : str_replace(' ', '_',$user['name']);
+                    $email = $partyData['email'];
                     $userData = [
                         'name'=>Arr::get($user, 'name'),
                         'email'=>$email,
                         'party_lead'=>$primary,
                         'party_id'=>$party->id,
-                        'allergies'=>Arr::get($data, 'allergies'),
+                        'allergies'=>Arr::get($user, 'allergies'),
                         'password' => Hash::make($partyData['slug']),
                         'api_token' => Str::random(80),
-                        'meal_id'=>Arr::get($data, 'meal_id', null)
+                        'meal_id'=>Arr::get($user, 'meal_id', null)
                     ];
+                    if($password = Arr::get($data, 'password')){
+                        $userData['password'] = bcrypt($password);
+                    }
+
                     $this->userRepository->create($userData);
                 }
             }
@@ -114,6 +119,10 @@ class PartyService
                 ];
                 $this->rsvpRepository->create($rsvpData);
             }
+
+            //make a unique slug that we can unhash
+            $party = $this->partyRepository->update($party->id, ['slug'=>Obfuscator::encode($party->id)]);
+
             //if it successful commit it to the db
             DB::commit();
         }
@@ -131,6 +140,8 @@ class PartyService
         $party = $this->getParty($partyId);
 
         $existingUsers = $party->users->pluck('name', 'id')->toArray();
+
+        //$this->verifyU
 
         //dd($party->toArray());
 
@@ -159,7 +170,8 @@ class PartyService
 
                     //primary user gets email associated to party
                     $primary = (Arr::get($user, 'party_lead', 0) || count($users) == 1);
-                    $email = ($primary) ? $partyData['email'] : str_replace(' ', '_',$user['name']);
+                    //$email = ($primary) ? $partyData['email'] : str_replace(' ', '_',$user['name'].$party->id);
+                    $email = $partyData['email'];
 
                     //see if user needs to be updated or created
                     if(Arr::get($user, 'id') || in_array($user['name'], $existingUsers)){
@@ -171,9 +183,13 @@ class PartyService
                             'email'=>$email,
                             'party_lead'=>$primary,
                             'party_id'=>$party->id,
-                            'allergies'=>Arr::get($data, 'allergies'),
-                            'meal_id'=>Arr::get($data, 'meal_id', $userId)
+                            'allergies'=>Arr::get($user, 'allergies'),
+                            'meal_id'=>Arr::get($user, 'meal_id', $userId)
                         ];
+
+                        if($password = Arr::get($data, 'password')){
+                            $userData['password'] = bcrypt($password);
+                        }
                         $this->userRepository->update($userId, $userData);
                     }
                     else{
@@ -183,11 +199,15 @@ class PartyService
                             'email'=>$email,
                             'party_lead'=>$primary,
                             'party_id'=>$party->id,
-                            'allergies'=>Arr::get($data, 'allergies'),
+                            'allergies'=>Arr::get($user, 'allergies'),
                             'password' => Hash::make($party->slug),
                             'api_token' => Str::random(80),
-                            'meal_id'=>Arr::get($data, 'meal_id', null)
+                            'meal_id'=>Arr::get($user, 'meal_id', null)
                         ];
+
+                        if($password = Arr::get($data, 'password')){
+                            $userData['password'] = bcrypt($password);
+                        }
                         $this->userRepository->create($userData);
                     }
 

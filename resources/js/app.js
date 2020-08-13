@@ -23,12 +23,16 @@ Vue.use(Vuetify);
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 Vue.component('book-list', require('./components/books/BookList.vue').default);
+Vue.component('party-list', require('./components/parties/PartyList.vue').default);
+Vue.component('party', require('./components/parties/Party.vue').default);
+Vue.component('registry', require('./components/registry/Registry.vue').default);
 const app = new Vue({
     el: '#app',
     vuetify: new Vuetify(),

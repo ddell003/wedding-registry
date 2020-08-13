@@ -9,7 +9,8 @@ class CreateUsersTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     * php artisan user:create --first_name=Parker --last_name=Dell --email=parkerdell94@gmail.com --password=testtest --admin=1
+     * php artisan user:get --id=2
      * @return void
      */
     public function up()
@@ -18,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name')->nullable();
             $table->string('slug');
-            $table->string('email')->nullable();
+            $table->string('email')->unique()->nullable();
             $table->string('street')->nullable();
             $table->string('street2')->nullable();
             $table->string('city')->nullable();
@@ -46,7 +47,7 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('email')->unique();
+            $table->string('email')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('api_token', 80);
@@ -79,9 +80,9 @@ class CreateUsersTable extends Migration
         });
 
         $meals = [
-            ['name'=>'Chicken', 'gluten_free'=>0],
-            ['name'=>'Beef', 'gluten_free'=>0],
-            ['name'=>'Vegies', 'gluten_free'=>0],
+            ['name'=>'Chicken', 'gluten_free'=>0, 'description'=>'Spring Chicken Dish with mushrooms and onions'],
+            ['name'=>'Beef', 'gluten_free'=>0, 'description'=>'Roasted Beef served with ...'],
+            ['name'=>'Vegies', 'gluten_free'=>0, 'description'=>'Vegi Lasagna'],
         ];
 
         foreach ($meals as $meal){
@@ -94,6 +95,7 @@ class CreateUsersTable extends Migration
             $table->text('description')->nullable();
             $table->string('photo_src')->nullable();
             $table->integer('party_id')->nullable();
+            $table->boolean('unlimited_claims')->nullable();
             $table->dateTime('claimed_at')->nullable();
             $table->timestamps();
             $table->softDeletes();

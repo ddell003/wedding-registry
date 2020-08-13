@@ -20,6 +20,13 @@ class RegistryItem  extends Model
         'photo_src',
         'party_id',
         'claimed_at',
+        'unlimited_claims'
+    ];
+
+    protected $casts = [
+        'id' => "integer",
+        'party_id' => 'integer',
+        'unlimited_claims' => 'integer',
     ];
 
     protected $hidden = ['deleted_at', 'deleted_by'];

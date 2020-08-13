@@ -25,6 +25,10 @@ class Rsvp extends Model
     protected $casts = [
         'id' => "integer",
         'count' => 'integer',
+        'attending' => 'integer',
+        'ceremony' => 'integer',
+        'reception' => 'integer',
+        'response_may_change' => 'integer',
     ];
 
     protected $hidden = ['deleted_at', 'deleted_by'];

@@ -36,6 +36,11 @@ class RegistryItemService
 
     public function getItems()
     {
+
+        if(request()->get('status') == 'unclaimed'){
+            //dd(request()->get('status'));
+            //return $this->registryItemRepository->getWhere('party_id', null, $this->options);
+        }
         return $this->registryItemRepository->get($this->options);
     }
 
@@ -59,7 +64,7 @@ class RegistryItemService
 
             $item = $this->registryItemRepository->create($registryData);
 
-            if($urls = Arr::get($data, 'registry_items_urls')){
+            if($urls = Arr::get($data, 'registry_item_urls')){
 
                 foreach($urls as $index=>$url){
                     $this->createUrlFromData($url, $item);
@@ -111,7 +116,7 @@ class RegistryItemService
                     $existingUrls[$oldUrl['id']] = $oldUrl->toArray();
                 }
 
-                $urls =  Arr::get($data, 'registry_items_urls', []);
+                $urls =  Arr::get($data, 'registry_item_urls', []);
 
                 foreach($urls as $url){
                     $urlId = Arr::get($url, 'id', null);
@@ -135,10 +140,12 @@ class RegistryItemService
                 }
             }
             else{
+
                 //basic users can only claim item, need to set party id to current users party
                 $updateData = [
                     'party_id'=>(Arr::get($data, 'party_id') && ! is_null($data['party_id'])) ? Auth()->user()->party_id : null,
                 ];
+
             }
 
             if($updateData['party_id'] && is_null($item->claimed_at)){

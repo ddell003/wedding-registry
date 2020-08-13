@@ -50,7 +50,8 @@ class HomeController extends Controller
             ['name'=>'Shelia Herlihy ', 'title'=>'Maid of Honor', 'url'=>'img/Bridesmaids/SheliaHerlihy.jpg'],
             ['name'=>'Jessica Knapton', 'title'=>'Bridesmaid', 'url'=>'img/Bridesmaids/JessicaKnapton.jpg'],
             ['name'=>'Anna Wright', 'title'=>'Bridesmaid', 'url'=>'img/Bridesmaids/AnnaWright.jpg'],
-            ['name'=>'Emily Dell ', 'title'=>'Bridesmaid', 'url'=>'img/Bridesmaids/EmilyDell.jpg'],
+            ['name'=>'Anna Powers', 'title'=>'Bridesmaid', 'url'=>'img/Bridesmaids/AnnaPowers.jpg'],
+            ['name'=>'Emily Dell ', 'title'=>'Bridesmaid', 'url'=>'img/Bridesmaids/em.jpg'],
         ];
         return view('welcome', compact('gallery', 'weddingParty'));
     }

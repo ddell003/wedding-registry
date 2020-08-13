@@ -19,7 +19,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','api_token', 'admin','meal_id', 'party_id'
+        'name', 'email', 'password','api_token', 'admin','meal_id', 'party_id','allergies'
     ];
 
     /**
@@ -33,11 +33,15 @@ class User extends Authenticatable
 
     /**
      * The attributes that should be cast to native types.
+     * Helps when frontend app check to see if 2 == 2 which will be false with out this since we'd be sending string 2 by default
      *
      * @var array
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'meal_id' => 'integer',
+        'admin' => 'integer',
+        'party_id' => 'integer',
     ];
 
     public function setSlugAttribute($value)

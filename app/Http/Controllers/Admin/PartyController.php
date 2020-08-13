@@ -25,7 +25,6 @@ class PartyController extends Controller
      */
     public function index()
     {
-        dd('view index');
         return view('admin.parties');
     }
 }

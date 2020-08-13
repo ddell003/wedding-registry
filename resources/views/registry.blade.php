@@ -2,10 +2,7 @@
 
 @section('content')
     <div class="container">
-        <div class="row">
-            <h1>Registry</h1>
-        </div>
-        <?php /*<book-list></book-list>*/ ?>
+        <registry :user="{{\Auth::user()}}"></registry>
     </div>
 
 @endsection
