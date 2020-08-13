@@ -2754,6 +2754,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Registry",
@@ -2775,10 +2781,12 @@ __webpack_require__.r(__webpack_exports__);
       for (var i = 0; i < this.myItems.length; i++) {
         if (this.myItems[i].id == item.id) {
           this.myItems.splice(i, 1);
-          this.items.push(item);
           break;
         }
       }
+
+      item.party_id = null;
+      this.putItem(item, 'items');
     },
     claimItem: function claimItem(item) {
       console.log('claiming item...', item);
@@ -2790,11 +2798,8 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
 
-      console.log('before update', item);
-      delete item.party_id;
-      item.part_id = this.user.party_id;
-      console.log('after update', item);
-      this.putItem(item, 'myItems'); //this.myItems.push()
+      item.party_id = this.user.party_id;
+      this.putItem(item, 'myItems');
     },
     putItem: function putItem(item, field) {
       var _this = this;
@@ -44472,6 +44477,8 @@ var render = function() {
           )
         : _vm._e(),
       _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
       _c(
         "v-card",
         [
@@ -44639,23 +44646,42 @@ var render = function() {
                       : _c(
                           "div",
                           [
-                            _c(
-                              "v-btn",
-                              {
-                                staticStyle: { "background-color": "#4caf50" },
-                                attrs: { color: "secondary", dark: "" },
-                                on: {
-                                  click: function($event) {
-                                    return _vm.claimItem(item)
-                                  }
-                                }
-                              },
-                              [
-                                _c("v-icon", [_vm._v("mdi-plus")]),
-                                _vm._v(" Claim\n                    ")
-                              ],
-                              1
-                            )
+                            item.unlimited_claims == 1
+                              ? _c(
+                                  "v-btn",
+                                  {
+                                    staticStyle: {
+                                      "background-color": "#b1ddb2"
+                                    },
+                                    attrs: { color: "secondary", dark: "" }
+                                  },
+                                  [
+                                    _c("v-icon", [_vm._v("mdi-plus")]),
+                                    _vm._v(
+                                      " Cant Click Claim\n                    "
+                                    )
+                                  ],
+                                  1
+                                )
+                              : _c(
+                                  "v-btn",
+                                  {
+                                    staticStyle: {
+                                      "background-color": "#4caf50"
+                                    },
+                                    attrs: { color: "secondary", dark: "" },
+                                    on: {
+                                      click: function($event) {
+                                        return _vm.claimItem(item)
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _c("v-icon", [_vm._v("mdi-plus")]),
+                                    _vm._v(" Claim\n                    ")
+                                  ],
+                                  1
+                                )
                           ],
                           1
                         )

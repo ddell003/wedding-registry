@@ -54,6 +54,7 @@ class RegistryItemService
             'description'=>Arr::get($data, 'description', null),
             'photo_src'=>Arr::get($data, 'photo_src', null),
             'party_id'=>Arr::get($data, 'party_id', null),
+            'unlimited_claims'=>Arr::get($data, 'unlimited_claims', null),
         ];
 
         $registryData['claimed_at'] = ($registryData['party_id']) ?  Carbon::now() : null;
@@ -107,6 +108,7 @@ class RegistryItemService
                     'description'=>Arr::get($data, 'description', $item->description),
                     'photo_src'=>Arr::get($data, 'photo_src', $item->photo_src),
                     'party_id'=>Arr::get($data, 'party_id', $item->party_id),
+                    'unlimited_claims'=>Arr::get($data, 'unlimited_claims', $item->unlimited_claims),
                 ];
 
                 //need to check urls
@@ -140,12 +142,21 @@ class RegistryItemService
                 }
             }
             else{
+                $partyId = Arr::get($data, 'party_id', null);
+                if($partyId && ! is_null($partyId)){
+                    $updateData['party_id'] = Auth()->user()->party_id;
+                }
+                elseif($item->party_id == Auth()->user()->party_id && is_null($partyId)){
+                    $updateData['party_id'] = null;
+                }
+                else{
+                    //cant change party id
+                }
+            }
 
-                //basic users can only claim item, need to set party id to current users party
-                $updateData = [
-                    'party_id'=>(Arr::get($data, 'party_id') && ! is_null($data['party_id'])) ? Auth()->user()->party_id : null,
-                ];
-
+            //cant be claimed
+            if($item->unlimited_claims || Arr::get($data, 'unlimited_claims')){
+                $updateData['party_id'] = null;
             }
 
             if($updateData['party_id'] && is_null($item->claimed_at)){

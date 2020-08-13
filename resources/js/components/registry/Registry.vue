@@ -71,6 +71,7 @@
                 </template>
             </v-data-table>
         </v-card>
+        <br>
 
         <v-card>
             <v-list-item two-line>
@@ -126,9 +127,14 @@
                         </v-btn>
                     </div>
                     <div v-else>
-                        <v-btn color="secondary" dark style="background-color: #4caf50" @click="claimItem(item)">
+
+                        <v-btn color="secondary" dark style="background-color: #b1ddb2" v-if="item.unlimited_claims == 1">
+                            <v-icon>mdi-plus</v-icon> Cant Click Claim
+                        </v-btn>
+                        <v-btn color="secondary" dark style="background-color: #4caf50" @click="claimItem(item)" v-else>
                             <v-icon>mdi-plus</v-icon> Claim
                         </v-btn>
+
                     </div>
 
                 </template>
@@ -160,10 +166,12 @@
                 for(let i = 0; i < this.myItems.length; i++){
                     if(this.myItems[i].id == item.id){
                         this.myItems.splice(i, 1)
-                        this.items.push(item)
+
                         break
                     }
                 }
+                item.party_id = null
+                this.putItem(item, 'items')
             },
             claimItem(item){
               console.log('claiming item...', item)
@@ -174,12 +182,10 @@
                         break
                     }
                 }
-                console.log('before update', item)
-                delete item.party_id;
-                item.part_id = this.user.party_id
-                console.log('after update', item)
+                item.party_id = this.user.party_id
+
                 this.putItem(item, 'myItems')
-                //this.myItems.push()
+
             },
             putItem(item, field){
                 let url = '/api/registry_items/'+item.id
