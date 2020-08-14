@@ -93,7 +93,7 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->text('description')->nullable();
-            $table->string('photo_src')->nullable();
+            $table->text('photo_src')->nullable();
             $table->integer('party_id')->nullable();
             $table->boolean('unlimited_claims')->nullable();
             $table->dateTime('claimed_at')->nullable();
@@ -106,7 +106,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->text('description')->nullable();
             $table->integer('registry_item_id');
-            $table->string('url')->nullable();
+            $table->text('url')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

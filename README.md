@@ -41,3 +41,17 @@ $ git add .
 $ git commit -am "make it better"
 $ git push heroku master
 ``````
+### Setting Up .env Variables in Heroku
+https://devcenter.heroku.com/articles/config-vars
+``````
+$ heroku config
+$ heroku config:set DB_CONNECTION=pgsql
+$ heroku config:set DB_PASSWORD='password'
+$ git push heroku master
+``````
+### Running Migrations
+``````
+$ heroku run bash 
+$ php artisan migrate
+$ php artisan user:create --first_name=Parker --last_name=Dell --email=parkerdell94@gmail.com --password=testtest --admin=1
+``````
