@@ -345,7 +345,7 @@
         </div>
         <div class="row">
             <div class="col-md-6 ftco-animate">
-                <div class="place img" style="background-image: url(images/place-2.jpg);">
+                <div class="place img" style="background-image: url(img/place-2.jpg);">
                     <div class="text text-center">
                         <span class="icon flaticon-wedding-kiss"></span>
                         <h3>The Ceremony</h3>
@@ -356,7 +356,7 @@
                 </div>
             </div>
             <div class="col-md-6 ftco-animate">
-                <div class="place img" style="background-image: url(images/place-1.jpg);">
+                <div class="place img" style="background-image: url(img/place-1.jpg);">
                     <div class="text text-center">
                         <span class="icon flaticon-reception-bell"></span>
                         <h3>The Reception</h3>

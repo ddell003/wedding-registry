@@ -63,6 +63,8 @@ AOS.init({
     burgerMenu();
 
 
+
+
     var onePageClick = function() {
 
 
@@ -347,5 +349,19 @@ AOS.init({
             }
         });
     }
+
+    $('body').on('click', '.navbar-toggler', function(event){
+        event.preventDefault();
+
+        if ( $('#ftco-nav').is(':visible') ) {
+
+            $('#ftco-nav').addClass('collapse');
+        } else {
+
+            $('#ftco-nav').removeClass('collapse');
+
+        }
+
+    });
 
 })(jQuery);

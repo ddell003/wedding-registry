@@ -12,7 +12,8 @@
     <link href="{{ asset('css/template/owl.theme.default.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/template/magnific-popup.css') }}" rel="stylesheet">
     <link href="{{ asset('css/template/aos.css') }}" rel="stylesheet">
-    <?php /*<link href="{{ asset('css/template/ionicons.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/template/icomoon.css') }}" rel="stylesheet">
+    <?php /*
     <link href="{{ asset('css/template/flaticon.css') }}" rel="stylesheet">
     <link href="{{ asset('css/template/icomoon.css') }}" rel="stylesheet">*/ ?>
     <link href="{{ asset('css/template/style.css') }}" rel="stylesheet">
