@@ -6,7 +6,7 @@
         </button>
         <div class="navbar-collapse collapse" id="ftco-nav">
             <ul class="navbar-nav nav ml-auto">
-                <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home Large</span></a></li>
+                <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
                 <?php //<li class="nav-item"><a href="#groom-bride-section" class="nav-link"><span>Groom &amp; Bride</span></a></li>?>
                 <?php //<li class="nav-item"><a href="#lovestory-section" class="nav-link"><span>Love Story</span></a></li> ?>
                 <li class="nav-item"><a href="#greeting-section" class="nav-link"><span>Greetings</span></a></li>
