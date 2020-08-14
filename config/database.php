@@ -66,11 +66,11 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-            'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
+            'url' => 'postgres://vzxlmdwymyonth:6411dcd0e6473337f507a8dd632b7eaf8f7f23117a42d89f0bb0ec81a095a722@ec2-35-175-155-248.compute-1.amazonaws.com:5432/db9b4fv2d8m5b3',
+            'host' => 'ec2-35-175-155-248.compute-1.amazonaws.com',
+            'port' => '5432',
+            'database' => 'db9b4fv2d8m5b3',
+            'username' => 'vzxlmdwymyonth',
             'password' => env('DB_PASSWORD', ''),
             'charset' => 'utf8',
             'prefix' => '',

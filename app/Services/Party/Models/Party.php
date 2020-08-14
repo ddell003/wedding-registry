@@ -46,26 +46,4 @@ class Party extends Model
         return $this->hasOne(Rsvp::class, 'party_id', 'id');
     }
 
-   /*
-   $table->string('email');
-            $table->string('street');
-            $table->string('street2');
-            $table->string('city');
-            $table->string('state');
-            $table->string('zip');
-   public function site()
-    {
-        return $this->belongsTo(Site::class);
-    }
-
-    public function attachments()
-    {
-        return $this->morphMany(Attachment::class, 'attachable');
-    }
-
-    public function templates()
-    {
-        return $this->belongsToMany(Template::class, 'assets_templates', 'asset_id', 'template_id');
-    }*/
-
 }

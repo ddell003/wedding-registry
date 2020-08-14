@@ -20,7 +20,7 @@ class Meal extends Model
     protected $casts = [
         'id' => "integer",
         'slug' => 'string',
-        'rehearsal' => 'integer',
+        'gluten_free' => 'integer',
     ];
 
 

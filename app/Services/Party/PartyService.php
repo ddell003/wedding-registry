@@ -227,6 +227,7 @@ class PartyService
                         'reception'=>Arr::get($rsvp, 'reception', $party->rsvp->reception),
                         'response_may_change'=>Arr::get($rsvp, 'response_may_change', $party->rsvp->response_may_change),
                     ];
+
                     $this->rsvpRepository->update($party->rsvp->id, $rsvpData);
                 }
                 else{

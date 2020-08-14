@@ -116,6 +116,7 @@
 <html lang="en">
 @include('layouts.partials.headers')
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+<div id="app">
 @include('layouts.partials.navagation')
 <section id="home" class="video-hero js-fullheight" style="height: 700px; background-image: url(img/beach2.jpg?h=700); background-size:cover; background-position: top center;" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
@@ -369,6 +370,21 @@
         </div>
     </div>
 </section>
+<section class="ftco-section bg-light" id="faq">
+    <div class="container">
+        <div class="row justify-content-center pb-5">
+            <div class="col-md-12 text-center heading-section ftco-animate">
+                <span class="clone">COVID Policy CNT</span>
+                <h2 class="mb-3">FAQ</h2>
+            </div>
+        </div>
+        <div class="row ftco-animate">
+            <div class="col-md-12">
+               <faq></faq>
+            </div>
+        </div>
+    </div>
+</section>
 <section class="ftco-section bg-secondary" id="rsvp-section">
     <div class="container">
         <div class="row justify-content-center pb-5">
@@ -407,7 +423,7 @@
 
 
 <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
-
+</div>
 @include('layouts.partials.templateScripts')
 </body>
 </html>

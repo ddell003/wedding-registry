@@ -20,6 +20,7 @@ class Rsvp extends Model
         'ceremony',
         'reception',
         'response_may_change',
+        'rehearsal'
     ];
 
     protected $casts = [
@@ -29,6 +30,7 @@ class Rsvp extends Model
         'ceremony' => 'integer',
         'reception' => 'integer',
         'response_may_change' => 'integer',
+        'rehearsal' => 'integer',
     ];
 
     protected $hidden = ['deleted_at', 'deleted_by'];

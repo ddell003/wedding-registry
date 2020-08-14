@@ -7,11 +7,12 @@
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav nav ml-auto">
                 <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-                <li class="nav-item"><a href="#groom-bride-section" class="nav-link"><span>Groom &amp; Bride</span></a></li>
+                <?php //<li class="nav-item"><a href="#groom-bride-section" class="nav-link"><span>Groom &amp; Bride</span></a></li>?>
                 <?php //<li class="nav-item"><a href="#lovestory-section" class="nav-link"><span>Love Story</span></a></li> ?>
                 <li class="nav-item"><a href="#greeting-section" class="nav-link"><span>Greetings</span></a></li>
                 <li class="nav-item"><a href="#people-section" class="nav-link"><span>People</span></a></li>
                 <li class="nav-item"><a href="#when-where-section" class="nav-link"><span>When &amp; Where</span></a></li>
+                <li class="nav-item"><a href="#faq" class="nav-link"><span>FAQ</span></a></li>
                 <li class="nav-item">
                     @auth
                         <a href="{{ url('/rsvp') }}" class="nav-link"><span>RSVP</span></a>

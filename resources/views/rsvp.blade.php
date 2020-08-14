@@ -2,10 +2,9 @@
 
 @section('content')
     <div class="container">
-        <div class="row">
-            <h1>Rsvp</h1>
-        </div>
-        <?php /*<book-list></book-list>*/ ?>
+
+        <?php //dd($party->toArray())/**/ ?>
+        <rsvp :user="{{\Auth::user()}}" :party="{{$party}}"></rsvp>
     </div>
 
 @endsection

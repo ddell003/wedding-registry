@@ -31,8 +31,11 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  */
 Vue.component('book-list', require('./components/books/BookList.vue').default);
 Vue.component('party-list', require('./components/parties/PartyList.vue').default);
+Vue.component('meal-list', require('./components/meals/MealList.vue').default);
 Vue.component('party', require('./components/parties/Party.vue').default);
 Vue.component('registry', require('./components/registry/Registry.vue').default);
+Vue.component('rsvp', require('./components/parties/Rsvp.vue').default);
+Vue.component('faq', require('./components/Faq.vue').default);
 const app = new Vue({
     el: '#app',
     vuetify: new Vuetify(),

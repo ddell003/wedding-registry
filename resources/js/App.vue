@@ -11,6 +11,7 @@
     export default {
         name: "App"
     }
+    console.log('app.vue')
 </script>
 
 <style scoped>

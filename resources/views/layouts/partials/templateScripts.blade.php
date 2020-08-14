@@ -17,3 +17,4 @@
 <script src="{{ asset('js/template/main.js') }}"></script>
 
 <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="449c6e4c80def2ffd8bbd963-|49" defer=""></script>
+<script src="{{ asset('js/app.js') }}"></script>

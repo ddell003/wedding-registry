@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Services\Party\Models\Party;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -47,5 +48,10 @@ class User extends Authenticatable
     public function setSlugAttribute($value)
     {
         $this->attributes['slug'] = 'some random slug';
+    }
+
+    public function party()
+    {
+        return $this->belongsTo(Party::class, 'party_id', 'id');
     }
 }
