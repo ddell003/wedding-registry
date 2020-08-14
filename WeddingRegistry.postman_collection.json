@@ -1,0 +1,957 @@
+{
+	"info": {
+		"_postman_id": "9a88c855-0032-44cf-94c6-03e64b8954a0",
+		"name": "WeddingRegistry",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Meals",
+			"item": [
+				{
+					"name": "XML example",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						},
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/meal",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"meal"
+							],
+							"query": [
+								{
+									"key": "api_token",
+									"value": "ruU9vWr6pVCK3sGMmMXUPEtSfvJaY9rnSNBM96FG6ZKHkTUMRrZl43ZWKnUtbl3lVKK01L9cPhnHodqH",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8000/api/meal",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						},
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/meal",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"meal"
+							],
+							"query": [
+								{
+									"key": "api_token",
+									"value": "ruU9vWr6pVCK3sGMmMXUPEtSfvJaY9rnSNBM96FG6ZKHkTUMRrZl43ZWKnUtbl3lVKK01L9cPhnHodqH",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8000/api/meal/1",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						},
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/meal/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"meal",
+								"1"
+							],
+							"query": [
+								{
+									"key": "api_token",
+									"value": "ruU9vWr6pVCK3sGMmMXUPEtSfvJaY9rnSNBM96FG6ZKHkTUMRrZl43ZWKnUtbl3lVKK01L9cPhnHodqH",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST http://127.0.0.1:8000/api/meal",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/meal",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"meal"
+							],
+							"query": [
+								{
+									"key": "api_token",
+									"value": "ruU9vWr6pVCK3sGMmMXUPEtSfvJaY9rnSNBM96FG6ZKHkTUMRrZl43ZWKnUtbl3lVKK01L9cPhnHodqH",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT http://127.0.0.1:8000/api/meal/1",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Beefy\",\n    \"description\":\"some description\",\n    \"gluten_free\":0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/meal/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"meal",
+								"4"
+							],
+							"query": [
+								{
+									"key": "api_token",
+									"value": "ruU9vWr6pVCK3sGMmMXUPEtSfvJaY9rnSNBM96FG6ZKHkTUMRrZl43ZWKnUtbl3lVKK01L9cPhnHodqH",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/meal/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"meal",
+								"3"
+							],
+							"query": [
+								{
+									"key": "api_token",
+									"value": "ruU9vWr6pVCK3sGMmMXUPEtSfvJaY9rnSNBM96FG6ZKHkTUMRrZl43ZWKnUtbl3lVKK01L9cPhnHodqH",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Party",
+			"item": [
+				{
+					"name": "Create",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"the beals\",\n    \"email\":\"bobby@gmail.com\",\n    \"street\":\"1100 Patton Farm Rd\",\n    \"street2\":\"\",\n    \"city\":\"Stuarts Draft\",\n    \"state\":\"VA\",\n    \"zip\":\"24477\",\n    \"rehearsal\":1,\n    \"users\":[\n        {\n            \"name\":\"Bobby Beale\",\n            \"allergies\":\"\",\n            \"party_lead\":1,\n            \"meal_id\":1\n        },\n         {\n            \"name\":\"Kate Beale\",\n            \"allergies\":\"Gluton Free\",\n            \"party_lead\":0,\n            \"meal_id\":1\n        }\n    ]\n\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/party",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"party"
+							],
+							"query": [
+								{
+									"key": "api_token",
+									"value": "ruU9vWr6pVCK3sGMmMXUPEtSfvJaY9rnSNBM96FG6ZKHkTUMRrZl43ZWKnUtbl3lVKK01L9cPhnHodqH",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detail",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						},
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"the beals\",\n    \"email\":\"bobby@gmail.com\",\n    \"street\":\"1100 Patton Farm Rd\",\n    \"street2\":\"\",\n    \"city\":\"Stuarts Draft\",\n    \"state\":\"VA\",\n    \"zip\":\"24477\",\n    \"rehearsal\":1,\n    \"users\":[\n        {\n            \"name\":\"Bobby Beale\",\n            \"allergies\":\"\",\n            \"party_lead\":1,\n            \"meal_id\":1\n        },\n         {\n            \"name\":\"Kate Beale\",\n            \"allergies\":\"Gluton Free\",\n            \"party_lead\":0,\n            \"meal_id\":1\n        }\n    ]\n\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/party/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"party",
+								"1"
+							],
+							"query": [
+								{
+									"key": "api_token",
+									"value": "ruU9vWr6pVCK3sGMmMXUPEtSfvJaY9rnSNBM96FG6ZKHkTUMRrZl43ZWKnUtbl3lVKK01L9cPhnHodqH",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						},
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"the beals\",\n    \"email\":\"bobby@gmail.com\",\n    \"street\":\"1100 Patton Farm Rd\",\n    \"street2\":\"\",\n    \"city\":\"Stuarts Draft\",\n    \"state\":\"VA\",\n    \"zip\":\"24477\",\n    \"rehearsal\":1,\n    \"users\":[\n        {\n            \"name\":\"Bobby Beale\",\n            \"allergies\":\"\",\n            \"party_lead\":1,\n            \"meal_id\":1\n        },\n         {\n            \"name\":\"Kate Beale\",\n            \"allergies\":\"Gluton Free\",\n            \"party_lead\":0,\n            \"meal_id\":1\n        }\n    ]\n\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/party",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"party"
+							],
+							"query": [
+								{
+									"key": "api_token",
+									"value": "ruU9vWr6pVCK3sGMmMXUPEtSfvJaY9rnSNBM96FG6ZKHkTUMRrZl43ZWKnUtbl3lVKK01L9cPhnHodqH",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"the hazels\",\n    \"email\":\"hazels@gmail.com\",\n    \"street\":\"1100 Patton Farm Rd\",\n    \"street2\":\"\",\n    \"city\":\"Stuarts Draft\",\n    \"state\":\"VA\",\n    \"zip\":\"24477\",\n    \"rehearsal\":1,\n    \"users\":[\n        {\n            \"id\":2,\n            \"name\":\"Ray Hazel\",\n            \"allergies\":\"\",\n            \"party_lead\":1,\n            \"meal_id\":1\n        },\n         {\n             \"id\":3,\n            \"name\":\"Elise Hazel\",\n            \"allergies\":\"Gluton Free\",\n            \"party_lead\":0,\n            \"meal_id\":1\n        }\n    ],\n    \"rsvp\":{\n        \"attending\":1,\n        \"rehearsal\":1,\n        \"ceremony\":1,\n        \"reception\":1,\n        \"response_may_change\":1\n    }\n\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/party",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"party"
+							],
+							"query": [
+								{
+									"key": "api_token",
+									"value": "ruU9vWr6pVCK3sGMmMXUPEtSfvJaY9rnSNBM96FG6ZKHkTUMRrZl43ZWKnUtbl3lVKK01L9cPhnHodqH",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/party/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"party",
+								"2"
+							],
+							"query": [
+								{
+									"key": "api_token",
+									"value": "ruU9vWr6pVCK3sGMmMXUPEtSfvJaY9rnSNBM96FG6ZKHkTUMRrZl43ZWKnUtbl3lVKK01L9cPhnHodqH",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Registry Items",
+			"item": [
+				{
+					"name": "Create",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Ironning Board\",\n    \"description\":\"Any Size Cast iron pan\",\n    \"photo_src\":\"www.google.com\",\n    \"registry_item_urls\":[\n        {\n            \"name\":\"Amazon\",\n            \"description\":\"From Amazon\",\n            \"url\":\"www.amazon.com\"\n        }\n    ]\n\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/registry_items",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"registry_items"
+							],
+							"query": [
+								{
+									"key": "api_token",
+									"value": "ruU9vWr6pVCK3sGMmMXUPEtSfvJaY9rnSNBM96FG6ZKHkTUMRrZl43ZWKnUtbl3lVKK01L9cPhnHodqH",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						},
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Cast Iron Pan\",\n    \"description\":\"Any Size Cast iron pan\",\n    \"photo_src\":\"www.google.com\",\n    \"registry_items_urls\":[\n        {\n            \"name\":\"Amazon\",\n            \"description\":\"From Amazon\",\n            \"url\":\"www.amazon.com\"\n        }\n    ]\n\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/registry_items/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"registry_items",
+								"3"
+							],
+							"query": [
+								{
+									"key": "api_token",
+									"value": "ruU9vWr6pVCK3sGMmMXUPEtSfvJaY9rnSNBM96FG6ZKHkTUMRrZl43ZWKnUtbl3lVKK01L9cPhnHodqH",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						},
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Cast Iron Pan\",\n    \"description\":\"Any Size Cast iron pan\",\n    \"photo_src\":\"www.google.com\",\n    \"registry_items_urls\":[\n        {\n            \"name\":\"Amazon\",\n            \"description\":\"From Amazon\",\n            \"url\":\"www.amazon.com\"\n        }\n    ]\n\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/registry_items",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"registry_items"
+							],
+							"query": [
+								{
+									"key": "api_token",
+									"value": "ruU9vWr6pVCK3sGMmMXUPEtSfvJaY9rnSNBM96FG6ZKHkTUMRrZl43ZWKnUtbl3lVKK01L9cPhnHodqH",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Cast Iron Pan\",\n    \"description\":\"Any Size Cast iron pan\",\n    \"photo_src\":\"data:image/jpeg;base64,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\",\n    \"registry_items_urls\":[\n        {\n            \"id\":2,\n            \"name\":\"Amazon\",\n            \"description\":\"From Amazon\",\n            \"url\":\"www.amazon.com\"\n        },\n        {\n            \"name\":\"Ebay\",\n            \"description\":\"From Ebay\",\n            \"url\":\"www.amazon.com\"\n        }\n        \n    ],\n    \"party_id\":2\n\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/registry_items/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"registry_items",
+								"1"
+							],
+							"query": [
+								{
+									"key": "api_token",
+									"value": "ruU9vWr6pVCK3sGMmMXUPEtSfvJaY9rnSNBM96FG6ZKHkTUMRrZl43ZWKnUtbl3lVKK01L9cPhnHodqH",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

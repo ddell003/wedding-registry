@@ -351,7 +351,6 @@
                         <h3>The Ceremony</h3>
                         <p><span>Saturday, 28, 2019</span><br><span>03:00 pm-4:00 pm</span></p>
                         <p><span>St. Paul's United Methodis Church<br> 2000 Shutterlee Mill Rd<br> Staunton, 24401</span></p>
-                        <p><a href="#" class="btn-custom">See Map</a></p>
                     </div>
                 </div>
             </div>
@@ -362,7 +361,6 @@
                         <h3>The Reception</h3>
                         <p><span>Saturday, 19, 2020</span><br><span>04:00 pm-9:00 pm</span></p>
                         <p><span>Barren Ridge Vineyards<br> 984 Barren Ridge Road<br> Fishersville, VA 22939</span></p>
-                        <p><a href="#" class="btn-custom">See Map</a></p>
                     </div>
                 </div>
             </div>
@@ -429,6 +427,18 @@
 
 <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
 </div>
+<footer>
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-md-12 text-center">
+                <p>
+                    This website is made with Love by Parker For Katie | 12.19.2020
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
 @include('layouts.partials.templateScripts')
 </body>
 </html>

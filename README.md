@@ -6,6 +6,9 @@ It utilizes vueJS for the frontend with vuetify as the component library
 https://vuetifyjs.com/en/introduction/why-vuetify/
 
 This is stored on github https://github.com/ddell003/wedding-registry
+
+This is hosted live at: https://parker-and-katie.herokuapp.com/
+
 ### Getting Started
 1. ```composer install```
 2. ```cp .env-example .env```
@@ -15,6 +18,34 @@ This is stored on github https://github.com/ddell003/wedding-registry
 5. Create an account user ```php artisan user:create --first_name=Parker --last_name=Dell --email=parkerdell94@gmail.com --password=testtest --admin=1```
 6. Get the api_token to use in postman ```php artisan user:get --id=1```
 7. Set up the frontend ``npm install`` followed by ```npm run watch``` watch can be exchanged for dev or production
+
+### Using the API
+The frontend uses the backend REST JSON/XML API. The response type can be specified in the header as Accept = application/xml.
+The API return json as the default. To return data as XML the API uses the library https://github.com/mtownsend5512/response-xml. 
+
+To see the list of endpoints, import the post man collection found in the root of the project. To use the API, you need to be an authenticated user. 
+If you followed the previous steps, you made an admin user and you can run the console command listed above to retrieve you API token. 
+Once you have the token, format your headers with the KEY "Authorization" and the value "Bearer {{API token}}"
+
+#### Example Curl Request:
+```$xslt
+curl --location --request GET 'http://127.0.0.1:8000/api/meal' \
+--header 'Authorization: Bearer 4bb95RXAeuXM1BM3gkG0Hf7eVAodYBtl8v5votNkcOKcCCclcKdcfBeeke6gc2REOaEjk2KntZOn4LSW' \
+--header 'Accept: application/xml'
+```
+
+### Architecture
+#### Api
+The API utilizes a Service Repository Pattern. 
+
+So laravel utilizes MVC has a router which basically say given a url and method ex. GET users, direct them to a controller. 
+The controller then determines which service needs to be called. Services hold all the business logic and abstract it out to reusable/callable code.
+This came in handy when the api/PartyController needed to know party information and the RsvpController needed to get party information as well. 
+Instead of having duplicate logic, it has been abstracted out to the PartyService. The services then perform the various business logic 
+such as determining if a user is allowed to perform an action and other process such as deciding how to "RSVP" a user. To interact with the databases, 
+the service calls a repository which sits on top of the model which directly interacts with the database. The repository contains information 
+pertinent to the database. The repositories extend my base repository class which contains all the CRUD logic. Thus the individual libraries 
+are very simple but allow you to introduce specific complex logic as needed.  
 
 ## Deployments
 

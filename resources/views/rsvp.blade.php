@@ -2,9 +2,13 @@
 
 @section('content')
     <div class="container">
-
-        <?php //dd($party->toArray())/**/ ?>
+        @if($party)
         <rsvp :user="{{\Auth::user()}}" :party="{{$party}}"></rsvp>
+        @else
+                <v-alert type="info" style="background-color: #2196f3 !important;">
+                   Please Contact Parker or Katie to set up an RSVP for you!
+                </v-alert>
+        @endif
     </div>
 
 @endsection
