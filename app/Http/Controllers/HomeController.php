@@ -53,6 +53,53 @@ class HomeController extends Controller
             ['name'=>'Anna Powers', 'title'=>'Bridesmaid', 'url'=>'img/Bridesmaids/AnnaPowers.jpg'],
             ['name'=>'Emily Dell ', 'title'=>'Bridesmaid', 'url'=>'img/Bridesmaids/em.jpg'],
         ];
-        return view('welcome', compact('gallery', 'weddingParty'));
+
+        $faq = [
+            [
+                'question'=>'Current Virginia Policies',
+                'answer'=>'
+                            <ul>
+                            <li>In door gathering up to 250 people</li>
+                            <li>Masks required indoor unless eating at table</li>
+                            <li>Social distancing of 6 feet</li>
+                            </ul>
+                            '
+            ],
+            [
+                'question'=>'When should I RSVP by?',
+                'answer'=>'
+                           <ul>
+                           <li>Please RSVP by October 19, 2020. We would love to hear from you before that if you are able!</li>
+                            <li>We understand that your RSVP may be tentative due to COVID-19.  If you have specific questions or ideas that would help you feel more comfortable at our wedding, please send me an email at: katie.lynne13@gmail.com</li>
+                            </ul>
+                            '
+            ],
+            [
+                'question'=>'What time should I arrive at the ceremony?',
+                'answer'=>'<ul><li>The church will be open as of 2:30PM. Please arrive by 2:50PM at the latest!</li></ul>'
+            ],
+            [
+                'question'=>'Can I bring a date?',
+                'answer'=>'<ul><li>Social distancing is somewhat limiting the size of our party but please do reach out if you would like to bring a plus one and it was not included in your invitation.</li></ul>'
+            ],
+            [
+                'question'=>'Are kids welcome??',
+                'answer'=>"<ul><li>We've invited some children that are we personally know and love. Your invitation lists the specific people we have accounted for from your household.</li></ul>"
+            ],
+            [
+                'question'=>'Is there a dress code?',
+                'answer'=>"<ul><li>Semi-formal or Dressy-casual. Wear something you feel awesome in!</li></ul>"
+            ],
+            [
+                'question'=>'Is there parking for the ceremony or reception?',
+                'answer'=>"<ul><li>Yes! There is ample parking at both locations!</li></ul>"
+            ],
+            [
+                'question'=>'I have a food allergy, can I make a special request?',
+                'answer'=>"<ul><li>Please, please, please do!! We have planned with our caterer to offer a vegetarian, dairy-free, and gluten-free meals. You can indicate your needs on the RSVP form.</li></ul>"
+            ],
+
+        ];
+        return view('welcome', compact('gallery', 'weddingParty', 'faq'));
     }
 }

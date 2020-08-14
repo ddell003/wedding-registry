@@ -380,7 +380,12 @@
         </div>
         <div class="row ftco-animate">
             <div class="col-md-12">
-               <faq></faq>
+                @foreach($faq as $item)
+                <button class="accordion">{{$item['question']}}</button>
+                <div class="panel">
+                   {!! $item['answer']!!}
+                </div>
+                @endforeach
             </div>
         </div>
     </div>
