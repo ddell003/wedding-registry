@@ -45051,9 +45051,7 @@ var render = function() {
                                             label:
                                               meal.name +
                                               " - " +
-                                              meal.description +
-                                              " " +
-                                              meal.id,
+                                              meal.description,
                                             value: meal.id
                                           }
                                         })

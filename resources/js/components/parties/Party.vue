@@ -118,7 +118,7 @@
                                     <v-radio
                                         name="meal"
                                         v-for="(meal, index) in meals"
-                                        :label=" `${meal.name} - ${meal.description} ${meal.id}` "
+                                        :label=" `${meal.name} - ${meal.description}` "
                                         :value="meal.id"
                                     ></v-radio>
                                 </v-radio-group>
