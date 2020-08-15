@@ -10,6 +10,13 @@ This is stored on github https://github.com/ddell003/wedding-registry
 This is hosted live at: https://parker-and-katie.herokuapp.com/
 
 ### Getting Started
+
+#### For windows
+1. Install xampp https://divpusher.com/blog/how-to-run-laravel-on-windows-with-xampp/
+2. Install xamp and point it to the php.exe inside of xampp
+3. Place code or do git clone of repo into the htdocs
+
+
 1. ```composer install```
 2. ```cp .env-example .env```
 3. set up the .env variables (includes setting up database credientials)
