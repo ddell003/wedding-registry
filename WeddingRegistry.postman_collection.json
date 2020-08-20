@@ -223,8 +223,8 @@
 							}
 						],
 						"body": {
-							"mode": "formdata",
-							"formdata": [],
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Veggi Chicken\",\n    \"description\":\"some description\",\n    \"gluten_free\":1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -374,6 +374,70 @@
 									"key": "api_token",
 									"value": "ruU9vWr6pVCK3sGMmMXUPEtSfvJaY9rnSNBM96FG6ZKHkTUMRrZl43ZWKnUtbl3lVKK01L9cPhnHodqH",
 									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query Filters",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						},
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 8WOr7EUuGEsqyGyVoAn6GbvCdbXyAOS5heMJ53KjpclMyn0VaKbimY7qA8mOOGT7pQb8BAGxLGn0mEFQ",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://parker-and-katie.herokuapp.com/api/meal?gluten_free=true",
+							"protocol": "https",
+							"host": [
+								"parker-and-katie",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"meal"
+							],
+							"query": [
+								{
+									"key": "api_token",
+									"value": "ruU9vWr6pVCK3sGMmMXUPEtSfvJaY9rnSNBM96FG6ZKHkTUMRrZl43ZWKnUtbl3lVKK01L9cPhnHodqH",
+									"disabled": true
+								},
+								{
+									"key": "gluten_free",
+									"value": "true"
 								}
 							]
 						}

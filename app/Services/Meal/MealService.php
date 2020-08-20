@@ -24,9 +24,18 @@ class MealService
         return $this->mealRepository->getById($mealId);
     }
 
-    public function getMeals()
+    public function getMeals($filters = [])
     {
-        return $this->mealRepository->get();
+        if($filters){
+            if(array_key_exists('gluten_free', $filters)){
+                return $this->mealRepository->getWhere('gluten_free', $filters['gluten_free']);
+            }
+
+        }
+        else{
+            return $this->mealRepository->get();
+        }
+
     }
 
     public function createMeal($data)

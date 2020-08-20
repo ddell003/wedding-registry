@@ -76,7 +76,7 @@
 
                             </v-col>
                             <v-col cols="12" sm="4" md="3" v-if="form.rehearsal">
-                                <span>Will be attending Rehearsal Dinner {{form.rsvp.rehearsal}}</span>
+                                <span>Will be attending Rehearsal Dinner</span>
                                 <v-select
                                     v-model="form.rsvp.rehearsal"
                                     :items="yesNo"
@@ -129,7 +129,7 @@
                                     <v-radio
                                         name="meal"
                                         v-for="(meal, index) in meals"
-                                        :label=" `${meal.name} - ${meal.description} ${meal.id}` "
+                                        :label=" `${meal.name} - ${meal.description}` "
                                         :value="meal.id"
                                     ></v-radio>
                                 </v-radio-group>

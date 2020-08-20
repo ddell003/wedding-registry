@@ -45672,8 +45672,7 @@ var render = function() {
                                   [
                                     _c("span", [
                                       _vm._v(
-                                        "Will be attending Rehearsal Dinner " +
-                                          _vm._s(_vm.form.rsvp.rehearsal)
+                                        "Will be attending Rehearsal Dinner"
                                       )
                                     ]),
                                     _vm._v(" "),
@@ -45877,9 +45876,7 @@ var render = function() {
                                           label:
                                             meal.name +
                                             " - " +
-                                            meal.description +
-                                            " " +
-                                            meal.id,
+                                            meal.description,
                                           value: meal.id
                                         }
                                       })

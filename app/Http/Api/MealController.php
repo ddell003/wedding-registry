@@ -25,7 +25,7 @@ class MealController extends ApiController
      */
     public function index()
     {
-        return $this->formatResponse(DefaultResource::collection($this->mealService->getMeals()));
+        return $this->formatResponse(DefaultResource::collection($this->mealService->getMeals(request()->input())));
     }
 
     /**

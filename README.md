@@ -19,12 +19,13 @@ This is hosted live at: https://parker-and-katie.herokuapp.com/
 
 1. ```composer install```
 2. ```cp .env-example .env```
-3. set up the .env variables (includes setting up database credientials)
+3. ```php artisan config:cache```
+4. set up the .env variables (includes setting up database credientials)
     - For testing locally just use sqlite ```touch /database/database.sqlite```
-4. Run Migrations to populate database ```php artisan migrate```
-5. Create an account user ```php artisan user:create --first_name=Parker --last_name=Dell --email=parkerdell94@gmail.com --password=testtest --admin=1```
-6. Get the api_token to use in postman ```php artisan user:get --id=1```
-7. Set up the frontend ``npm install`` followed by ```npm run watch``` watch can be exchanged for dev or production
+5. Run Migrations to populate database ```php artisan migrate```
+6. Create an account user ```php artisan user:create --first_name=Parker --last_name=Dell --email=parkerdell94@gmail.com --password=testtest --admin=1```
+7. Get the api_token to use in postman ```php artisan user:get --id=1```
+8. Set up the frontend ``npm install`` followed by ```npm run watch``` watch can be exchanged for dev or production
 
 ### Using the API
 The frontend uses the backend REST JSON/XML API. The response type can be specified in the header as Accept = application/xml.

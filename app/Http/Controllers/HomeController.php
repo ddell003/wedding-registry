@@ -2,18 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\Party\PartyService;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    private $partyService;
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(PartyService $partyService)
     {
-
+        $this->partyService = $partyService;
     }
 
     /**
@@ -24,7 +26,10 @@ class HomeController extends Controller
     public function index()
     {
         $this->middleware('auth');
-        return view('home');
+
+        //lets call the service to get the users party info
+        $party = $this->partyService->getParty(\Auth::user()->party_id);
+        return view('home', compact('party'));
     }
 
     public function welcome()
